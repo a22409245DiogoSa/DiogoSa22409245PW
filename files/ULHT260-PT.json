@@ -1,0 +1,16 @@
+{
+    "courseFlatPlan": [
+        {
+            "curricularUnitName": "Programação Web",
+            "curricularYear": 1,
+            "ects": 6,
+            "curricularIUnitReadableCode": "PW"
+        },
+        {
+            "curricularUnitName": "Sistemas Operativos",
+            "curricularYear": 1,
+            "ects": 6,
+            "curricularIUnitReadableCode": "SO"
+        }
+    ]
+}

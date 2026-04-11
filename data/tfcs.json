@@ -1,0 +1,12 @@
+[
+    {
+        "titulo": "Sistema de Gestão de Portfólios",
+        "resumo": "Um projeto desenvolvido em Django para a cadeira de PW.",
+        "autor": "Diogo Sa"
+    },
+    {
+        "titulo": "Aplicação de IA com Gemini",
+        "resumo": "Estudo sobre integração de LLMs em Python.",
+        "autor": "Diogo Sa"
+    }
+]
