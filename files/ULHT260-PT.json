@@ -1,16 +1,16 @@
 {
+    
     "courseFlatPlan": [
-        {
-            "curricularUnitName": "Programação Web",
-            "curricularYear": 1,
-            "ects": 6,
-            "curricularIUnitReadableCode": "PW"
-        },
-        {
-            "curricularUnitName": "Sistemas Operativos",
-            "curricularYear": 1,
-            "ects": 6,
-            "curricularIUnitReadableCode": "SO"
-        }
+        { "curricularUnitName": "Arquiteturas Avançadas de Computadores", "curricularYear": 2, "ects": 6 },
+        { "curricularUnitName": "Bases de Dados", "curricularYear": 2, "ects": 6 },
+        { "curricularUnitName": "Desenvolvimento de Interfaces Web", "curricularYear": 2, "ects": 6 },
+        { "curricularUnitName": "Linguagens de Programação II", "curricularYear": 2, "ects": 6 },
+        { "curricularUnitName": "Processamento de Imagem", "curricularYear": 2, "ects": 6 },
+        { "curricularUnitName": "Sistemas Operativos", "curricularYear": 2, "ects": 6 },
+        { "curricularUnitName": "Engenharia de Requisitos e Dados", "curricularYear": 2, "ects": 6 },
+        { "curricularUnitName": "Probabilidades e Estatística", "curricularYear": 2, "ects": 6 },
+        { "curricularUnitName": "Programação Web", "curricularYear": 2, "ects": 6 },
+        { "curricularUnitName": "Redes de Computadores", "curricularYear": 2, "ects": 6 },
+        { "curricularUnitName": "Sistemas de Suporte à Decisão", "curricularYear": 2, "ects": 6 }
     ]
 }
