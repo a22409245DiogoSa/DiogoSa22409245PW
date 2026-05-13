@@ -1,0 +1,10 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+<h2>Tens a certeza que queres apagar "{{ item }}"?</h2>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" style="background-color: red; color: white;">Sim, Apagar</button>
+    <a href="{% url 'portfolio:projetos_list' %}">Cancelar</a>
+</form>
+{% endblock %}

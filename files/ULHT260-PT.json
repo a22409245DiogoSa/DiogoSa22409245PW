@@ -1,16 +1,35 @@
 {
     
-    "courseFlatPlan": [
-        { "curricularUnitName": "Arquiteturas Avançadas de Computadores", "curricularYear": 2, "ects": 6 },
-        { "curricularUnitName": "Bases de Dados", "curricularYear": 2, "ects": 6 },
-        { "curricularUnitName": "Desenvolvimento de Interfaces Web", "curricularYear": 2, "ects": 6 },
-        { "curricularUnitName": "Linguagens de Programação II", "curricularYear": 2, "ects": 6 },
-        { "curricularUnitName": "Processamento de Imagem", "curricularYear": 2, "ects": 6 },
-        { "curricularUnitName": "Sistemas Operativos", "curricularYear": 2, "ects": 6 },
-        { "curricularUnitName": "Engenharia de Requisitos e Dados", "curricularYear": 2, "ects": 6 },
-        { "curricularUnitName": "Probabilidades e Estatística", "curricularYear": 2, "ects": 6 },
-        { "curricularUnitName": "Programação Web", "curricularYear": 2, "ects": 6 },
-        { "curricularUnitName": "Redes de Computadores", "curricularYear": 2, "ects": 6 },
-        { "curricularUnitName": "Sistemas de Suporte à Decisão", "curricularYear": 2, "ects": 6 }
-    ]
+  "courseFlatPlan": [
+    { "curricularUnitName": "Fundamentos de Programação", "curricularYear": 1, "ects": 6 },
+    { "curricularUnitName": "Matemática I", "curricularYear": 1, "ects": 6 },
+    { "curricularUnitName": "Álgebra Linear", "curricularYear": 1, "ects": 6 },
+    { "curricularUnitName": "Sistemas Digitais", "curricularYear": 1, "ects": 6 },
+    { "curricularUnitName": "Introdução às Tecnologias de Informação", "curricularYear": 1, "ects": 6 },
+    { "curricularUnitName": "Linguagens de Programação I", "curricularYear": 1, "ects": 6 },
+    { "curricularUnitName": "Matemática II", "curricularYear": 1, "ects": 6 },
+    { "curricularUnitName": "Arquitetura de Computadores", "curricularYear": 1, "ects": 6 },
+    { "curricularUnitName": "Matemática Discreta", "curricularYear": 1, "ects": 6 },
+    { "curricularUnitName": "Física", "curricularYear": 1, "ects": 6 },
+    
+    { "curricularUnitName": "Arquiteturas Avançadas de Computadores", "curricularYear": 2, "ects": 6 },
+    { "curricularUnitName": "Bases de Dados", "curricularYear": 2, "ects": 6 },
+    { "curricularUnitName": "Desenvolvimento de Interfaces Web", "curricularYear": 2, "ects": 6 },
+    { "curricularUnitName": "Linguagens de Programação II", "curricularYear": 2, "ects": 6 },
+    { "curricularUnitName": "Processamento de Imagem", "curricularYear": 2, "ects": 6 },
+    { "curricularUnitName": "Sistemas Operativos", "curricularYear": 2, "ects": 6 },
+    { "curricularUnitName": "Engenharia de Requisitos e Dados", "curricularYear": 2, "ects": 6 },
+    { "curricularUnitName": "Probabilidades e Estatística", "curricularYear": 2, "ects": 6 },
+    { "curricularUnitName": "Programação Web", "curricularYear": 2, "ects": 6 },
+    { "curricularUnitName": "Redes de Computadores", "curricularYear": 2, "ects": 6 },
+    { "curricularUnitName": "Sistemas de Suporte à Decisão", "curricularYear": 2, "ects": 6 },
+
+    { "curricularUnitName": "Inteligência Artificial", "curricularYear": 3, "ects": 6 },
+    { "curricularUnitName": "Engenharia de Software", "curricularYear": 3, "ects": 6 },
+    { "curricularUnitName": "Sistemas Distribuídos", "curricularYear": 3, "ects": 6 },
+    { "curricularUnitName": "Segurança Informática", "curricularYear": 3, "ects": 6 },
+    { "curricularUnitName": "Projeto Final (TFC)", "curricularYear": 3, "ects": 12 },
+    { "curricularUnitName": "Gestão de Projetos", "curricularYear": 3, "ects": 6 },
+    { "curricularUnitName": "Ética e Deontologia", "curricularYear": 3, "ects": 4 }
+  ]
 }

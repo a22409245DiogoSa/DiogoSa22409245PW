@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'portfolio',
+    'escola',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -128,5 +130,8 @@ import os
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_REDIRECT_URL = 'portfolio:home'
+LOGOUT_REDIRECT_URL = 'portfolio:home'
 
 # URL pública para aceder aos ficheiros

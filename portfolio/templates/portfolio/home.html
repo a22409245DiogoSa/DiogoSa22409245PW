@@ -1,0 +1,106 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+<style>
+    .admin-section { margin-bottom: 30px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; }
+    .btn { padding: 5px 10px; text-decoration: none; border-radius: 4px; display: inline-block; margin: 2px; }
+    .btn-add { background: #28a745; color: white; }
+    .btn-edit { background: #ffc107; color: black; }
+    .btn-delete { background: #dc3545; color: white; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 8px; border-bottom: 1px solid #ddd; }
+</style>
+
+<h1>Gestão do Portfólio</h1>
+
+<!-- SECÇÃO DE PROJETOS -->
+<div class="admin-section">
+    <h2>Projetos</h2>
+    {% if request.user.is_authenticated and request.user.groups.all.0.name == 'gestor-portfolio' %}
+        <a href="{% url 'portfolio:novo_projeto' %}" class="btn btn-add">+ Novo Projeto</a>
+    {% endif %}
+    
+    <table>
+        <tr>
+            <th>Título</th>
+            <th>UC</th>
+            <th>Ações</th>
+        </tr>
+        {% for projeto in projetos %}
+        <tr>
+            <td>{{ projeto.titulo }}</td>
+            <td>{{ projeto.uc.nome }}</td>
+            <td>
+                {% if request.user.is_authenticated and request.user.groups.all.0.name == 'gestor-portfolio' %}
+                    <a href="{% url 'portfolio:edita_projeto' projeto.id %}" class="btn btn-edit">Editar</a>
+                    <a href="{% url 'portfolio:apaga_projeto' projeto.id %}" class="btn btn-delete">Apagar</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="3">Nenhum projeto encontrado.</td></tr>
+        {% endfor %}
+    </table>
+</div>
+
+<!-- SECÇÃO DE TECNOLOGIAS -->
+<div class="admin-section">
+    <h2>Tecnologias</h2>
+    {% if request.user.is_authenticated and request.user.groups.all.0.name == 'gestor-portfolio' %}
+        <a href="{% url 'portfolio:nova_tecnologia' %}" class="btn btn-add">+ Nova Tecnologia</a>
+    {% endif %}
+
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Ações</th>
+        </tr>
+        {% for tecnologia in tecnologias %}
+        <tr>
+            <td>{{ tecnologia.nome }}</td>
+            <td>
+                {% if request.user.is_authenticated and request.user.groups.all.0.name == 'gestor-portfolio' %}
+                    <a href="{% url 'portfolio:edita_tecnologia' tecnologia.id %}" class="btn btn-edit">Editar</a>
+                    <a href="{% url 'portfolio:apaga_tecnologia' tecnologia.id %}" class="btn btn-delete">Apagar</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<!-- SECÇÃO DE LICENCIATURA -->
+<div class="admin-section">
+    <h2>Licenciatura (Formação)</h2>
+    {% if request.user.is_authenticated and request.user.groups.all.0.name == 'gestor-portfolio' %}
+        <a href="{% url 'portfolio:nova_licenciatura' %}" class="btn btn-add">+ Nova Licenciatura</a>
+    {% endif %}
+</div>
+
+<!-- SECÇÃO DE UNIDADES CURRICULARES -->
+<div class="admin-section">
+    <h2>Unidades Curriculares (Competências)</h2>
+    {% if request.user.is_authenticated and request.user.groups.all.0.name == 'gestor-portfolio' %}
+        <a href="{% url 'portfolio:nova_uc' %}" class="btn btn-add">+ Nova UC</a>
+    {% endif %}
+
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Docente</th>
+            <th>Ações</th>
+        </tr>
+        {% for uc in unidades %}
+        <tr>
+            <td>{{ uc.nome }}</td>
+            <td>{{ uc.docente }}</td>
+            <td>
+                {% if request.user.is_authenticated and request.user.groups.all.0.name == 'gestor-portfolio' %}
+                    <a href="{% url 'portfolio:edita_uc' uc.id %}" class="btn btn-edit">Editar</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
