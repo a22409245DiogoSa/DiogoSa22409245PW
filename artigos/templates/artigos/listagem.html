@@ -1,0 +1,27 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+<h2>Artigos Tecnológicos</h2>
+{% if request.user.is_authenticated and request.user.groups.all.0.name == 'autores' %}
+    <a href="{% url 'admin:artigos_artigo_add' %}" class="btn btn-success">Novo Artigo</a>
+{% endif %}
+<div class="row">
+    {% for artigo in artigos %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            {% if artigo.fotografia %}
+                <img src="{{ artigo.fotografia.url }}" class="card-img-top">
+            {% endif %}
+            <div class="card-body">
+                <h5>{{ artigo.titulo }}</h5>
+                <p>{{ artigo.conteudo|truncatewords:20 }}</p>
+                <a href="{% url 'artigos:detalhe' artigo.id %}" class="btn btn-primary btn-sm">Ler mais</a>
+                <a href="{% url 'artigos:like' artigo.id %}" class="btn btn-outline-danger btn-sm">
+                    ❤️ {{ artigo.total_likes }}
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

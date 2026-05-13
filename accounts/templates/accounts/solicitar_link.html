@@ -1,0 +1,11 @@
+{% extends 'portfolio/layout.html' %}
+{% block content %}
+<div class="card p-4 mx-auto" style="max-width: 400px;">
+    <h3>Pedir Link Mágico</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="email" name="email" class="form-control mb-3" placeholder="Insere o teu e-mail" required>
+        <button type="submit" class="btn btn-success w-100">Enviar Link</button>
+    </form>
+</div>
+{% endblock %}

@@ -6,6 +6,10 @@
         <div class="col-md-4">
             <div class="card shadow p-4">
                 <h2 class="text-center mb-4">Entrar</h2>
+                <p>Ou prefere entrar sem palavra-passe?</p>
+    <a href="{% url 'accounts:magic_request' %}" class="btn btn-outline-info w-100">
+        ✨ Entrar com Link Mágico
+    </a>
                 <form method="POST">
                     {% csrf_token %}
                     {{ form.as_p }}
