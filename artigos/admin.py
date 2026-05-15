@@ -5,8 +5,8 @@ from .models import Artigo, Comentario
 from django.contrib.auth.models import Group
 
 # Criar o grupo programaticamente se não existir
-group, created = Group.objects.get_or_create(name='autores')
-
+#group, created = Group.objects.get_or_create(name='autores')
+#
 @admin.register(Artigo)
 class ArtigoAdmin(admin.ModelAdmin):
     # Campos que aparecem na lista
