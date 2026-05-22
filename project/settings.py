@@ -53,6 +53,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware", 
 ]
 
 ROOT_URLCONF = "project.urls"
@@ -120,32 +122,60 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
+# ==============================================================================
+# STATIC & MEDIA FILES CONFIGURATION
+# ==============================================================================
+
 STATIC_URL = "static/"
+# FIX: This tells Django/WhiteNoise where to collect static files
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
-from django.conf import settings
-from django.conf.urls.static import static
+# Optional: If you have a global static folder in your project root
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
-    
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
+# ==============================================================================
+# ENVIRONMENT VARIABLES & THIRD-PARTY SERVICES
+# ==============================================================================
+import environ
 import os
 
-# Pasta no servidor onde os ficheiros vão ser guardados
+# Initialize environ
+env = environ.Env()
+# Read .env file
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
+
+# Database definition (Overriding the default SQLite with your Neon PostgreSQL)
+DATABASES = {
+    "default": env.db("DATABASE_URL")
+}
+
+# Cloudinary Setup
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': env('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': env('CLOUDINARY_API_KEY'),
+    'API_SECRET': env('CLOUDINARY_API_SECRET'),
+}
+
+# Unified Storage Engines
 STORAGES = {
-    "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
-    },
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
+    # Media files go to Cloudinary
     "default": {
         "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
     },
+    # Static files are handled efficiently by WhiteNoise
     "staticfiles": {
-        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
 
-
+# ==============================================================================
+# AUTHENTICATION & EMAIL
+# ==============================================================================
 
 LOGIN_REDIRECT_URL = 'portfolio:home'
 LOGOUT_REDIRECT_URL = 'portfolio:home'
@@ -188,11 +218,7 @@ CLOUDINARY_STORAGE = {
 
 ## settings.py
 
-MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",    # <-- 1. adicione
-     ## ...
-]
+
 
 STORAGES = {                                         # <-- 2. adicione
     "staticfiles": {
